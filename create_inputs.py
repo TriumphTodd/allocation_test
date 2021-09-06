@@ -28,7 +28,7 @@ for x in itertools.product(months, products, channels):
 # write out the list of tuples as a CSV file
 # https://docs.python.org/3/library/csv.html
 with open('accounts.csv', 'w', newline='') as csvfile:
-    fieldnames = ['month', 'account_num', 'product', 'channel', 'aum']
+    fieldnames = ['month', 'account_num', 'product', 'channel', 'balance']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames, dialect='excel')
 
     writer.writeheader()
