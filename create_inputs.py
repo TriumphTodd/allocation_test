@@ -66,7 +66,7 @@ with open('expenses.csv', 'w', newline='') as csvfile:
 # mapping is the same for each month
 
 with open('map.csv', 'w', newline='') as csvfile:
-    fieldnames = ['month', 'center', 'maptype', 'product', 'channel']
+    fieldnames = ['month', 'cost_center', 'maptype', 'product', 'channel']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames, dialect='excel')
     writer.writeheader()
 
