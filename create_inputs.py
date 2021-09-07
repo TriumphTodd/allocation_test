@@ -62,8 +62,8 @@ with open('expenses.csv', 'w', newline='') as csvfile:
 # Create map of cost centers to accounts
 # -------------------------------------------------------------------------------------------------
 
-# loop through cost centers, choose if it goes to products or clients, then pick 1 to 3 of them.
-# mapping is the same for each month
+# loop through cost centers, choose if it goes to products or clients (not both!!!),
+#  then pick 1 to 3 of them.  Mapping is the same for each month
 
 with open('map.csv', 'w', newline='') as csvfile:
     fieldnames = ['month', 'cost_center', 'maptype', 'product', 'channel']
@@ -74,7 +74,7 @@ with open('map.csv', 'w', newline='') as csvfile:
     # write out centers
     for c in centers:
         # write in 'all' in the client field if product, vice versa
-        maptype =  random.choice(['product', 'client'])
+        maptype =  random.choice(['product', 'channel'])
         if maptype == 'product':
             mapdest = random.sample(products, k=random.randint(1,3))
             # create one row for each map destination with all in field 5
